@@ -19,7 +19,7 @@ class Statistics extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.twitch.tv/helix/users?login=fdefran002',
+        fetch(`https://api.twitch.tv/helix/users?login=${this.props.streamer}`,
             {
                 headers:
                 {
@@ -55,10 +55,12 @@ class Statistics extends Component {
             }
         )
     }
-
+    refreshPage = () => {
+        window.location.reload(false);
+    }
     render() {
         return (
-            <section id="statistics" className="bg-secondary py-5">
+            <section id="data" className="bg-secondary py-5">
                 <div className="container">
                     <h2 className="text-center">Stats of {this.state.steamer_name}</h2>
                     <img src={this.state.profile_image_url} className="img-fluid mx-auto d-block py-3" alt="" />
@@ -68,6 +70,9 @@ class Statistics extends Component {
                         <span className="badge badge-success mx-2 my-2">Views: {this.state.total_viewers}</span>
                         <span className="badge badge-danger mx-2 my-2">Followers: {this.state.followers}</span>
                     </p>
+                    <div className="d-flex justify-content-center">
+                        <button onClick={this.refreshPage} class="btn btn-primary">Seach Again</button>
+                    </div>
                 </div>
             </section>
         );

@@ -9,29 +9,32 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            streamer: null
+            isSubmitted: false,
+            streamer: ""
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.input = React.createRef();
     }
-    // submitHandler = (event) => {
-    //     event.preventDefault();
-    // }
-    // changeHandler = (event) => {
 
-    // }
+    handleSubmit(event) {
+        this.setState({ isSubmitted: true, streamer: this.input.current.value });
+        event.preventDefault();
+    }
+
     render() {
         return (
-            <section id="statistics" className="bg-secondary py-5">
+            <section id="statistics" className="bg-secondary py-5" >
                 <div className="container">
                     <h3 className="text-center">Enter the name of the Twitch Streamer</h3>
-                    <form onSubmit={this.submitHandler}>
-                        <div class="form-group d-flex justify-content-center">
-                            <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} onChange={this.changeHandler} />
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-group d-flex justify-content-center">
+                            <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} ref={this.input} />
                         </div>
                         <div className="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary" href="#statistics">Submit</button>
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                     </form>
-                    <Statistics streamer={this.state.streamer} />
+                    {this.state.isSubmitted && <Statistics streamer={this.state.streamer} />}
                 </div>
             </section>
         );

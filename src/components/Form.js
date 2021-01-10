@@ -9,19 +9,15 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            streamer: null,
-            isSubmitted: false,
-            isRendered: false,
+            streamer: null
         };
     }
-    submitHandler = (event) => {
-        event.preventDefault();
-        this.setState({ isSubmitted: false });
-        this.setState({ isSubmitted: true });
-    }
-    changeHandler = (event) => {
-        this.setState({ streamer: event.target.value.toLowerCase() });
-    }
+    // submitHandler = (event) => {
+    //     event.preventDefault();
+    // }
+    // changeHandler = (event) => {
+
+    // }
     render() {
         return (
             <section id="statistics" className="bg-secondary py-5">
@@ -35,7 +31,7 @@ class Form extends Component {
                             <button type="submit" class="btn btn-primary" href="#statistics">Submit</button>
                         </div>
                     </form>
-                    {this.state.isSubmitted && <Statistics streamer={this.state.streamer} />}
+                    <Statistics streamer={this.state.streamer} />
                 </div>
             </section>
         );

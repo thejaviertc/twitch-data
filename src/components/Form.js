@@ -28,7 +28,7 @@ class Form extends Component {
                     <h3 className="text-center">Enter the name of the Twitch Streamer</h3>
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group d-flex justify-content-center">
-                            <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} ref={this.input} />
+                            <input type="text" className="form-control text-center my-4" style={{ width: "70%" }} ref={this.input} placeholder="Enter Twitch Streamer" />
                         </div>
                         <div className="d-flex justify-content-center">
                             <button type="submit" className="btn btn-primary">Submit</button>

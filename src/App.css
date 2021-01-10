@@ -33,7 +33,11 @@ h3 {
 }
 
 #statistics img {
-    border-radius: 50%;
+	border-radius: 50%;
+}
+
+input {
+	font-weight: 700 !important;
 }
 
 /*###############
@@ -67,9 +71,9 @@ h3 {
 }
 
 #header {
-    color: white;
+	color: white;
 }
 
 #statistics {
-    color: black;
+	color: black;
 }

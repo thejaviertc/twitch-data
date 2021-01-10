@@ -30,29 +30,34 @@ class Statistics extends Component {
             }
         ).then(res => res.json()).then(
             (result) => {
-                this.setState({
-                    id: result.data[0].id,
-                    steamer_name: result.data[0].display_name,
-                    created_at: result.data[0].created_at.slice(0, 10),
-                    broadcaster_type: result.data[0].broadcaster_type,
-                    profile_image_url: result.data[0].profile_image_url,
-                    total_viewers: result.data[0].view_count
-                });
-                fetch(`https://api.twitch.tv/helix/users/follows?to_id=${this.state.id}`,
-                    {
-                        headers:
+                console.log(result);
+                if (result.data.length) {
+                    this.setState({
+                        id: result.data[0].id,
+                        steamer_name: result.data[0].display_name,
+                        created_at: result.data[0].created_at.slice(0, 10),
+                        broadcaster_type: result.data[0].broadcaster_type,
+                        profile_image_url: result.data[0].profile_image_url,
+                        total_viewers: result.data[0].view_count
+                    });
+                    fetch(`https://api.twitch.tv/helix/users/follows?to_id=${this.state.id}`,
                         {
-                            'Authorization': process.env.REACT_APP_TOKEN,
-                            'Client-ID': process.env.REACT_APP_CLIENT_ID
+                            headers:
+                            {
+                                'Authorization': process.env.REACT_APP_TOKEN,
+                                'Client-ID': process.env.REACT_APP_CLIENT_ID
+                            }
                         }
-                    }
-                ).then(res => res.json()).then(
-                    (result) => {
-                        this.setState({
-                            followers: result.total
-                        });
-                    }
-                )
+                    ).then(res => res.json()).then(
+                        (result) => {
+                            this.setState({
+                                followers: result.total
+                            });
+                        }
+                    )
+                } else {
+                    alert("This Twitch Streamer doesn't exist, try again");
+                }
             }
         )
     }

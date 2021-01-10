@@ -10,13 +10,13 @@ import './App.css';
 
 // Components
 import Header from "./components/Header";
-import Form from "./components/Form";
+import Statistics from "./components/Statistics";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Form />
+      <Statistics />
     </div >
   );
 }

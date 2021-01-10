@@ -1,17 +1,18 @@
 # **Twitch Data**
-<!-- ![Twitch Data](https://thejaviertc.github.io/portfolio-javiertc/static/media/steamstats.c83daab1.png) -->
+![Twitch Data](https://thejaviertc.github.io/portfolio-javiertc/static/media/twitch_data.456d10d3.jpg)
 
 # **About it:**
 ## **This project is made for make people able to see info about a Twitch Streamer.**
 
 # **Instructions:**
-## **- Clone the repository.**
-## **- Change the .env with the data required.**
-## **- npm install and npm start.**
+## **- Clone this repository.**
+## **- Change the keys of the .env file with your keys (Get the keys [here](https://dev.twitch.tv/)).**
+## **- Use `npm install` to install the required files.**
+## **- Use `npm start` to run it.**
 
 # **Todo List:**
-- [ ] Better Handling.
-- [ ] Better Instructions.
+- [x] Better Handling.
+- [x] Better Instructions.
 - [ ] Display more data.
 - [ ] Thinking more things...
 

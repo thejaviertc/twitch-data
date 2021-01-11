@@ -13,7 +13,7 @@
 ## **Todo List:**
 - [x] Better Handling.
 - [x] Better Instructions.
-- [ ] Display more data.
+- [x] Display more data.
 - [ ] Thinking more things...
 
 ## **Suggestions:**

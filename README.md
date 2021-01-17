@@ -14,6 +14,7 @@
 - [x] Better Handling.
 - [x] Better Instructions.
 - [x] Display more data.
+- [ ] Create Graphs with data.
 - [ ] Thinking more things...
 
 ## **Suggestions:**

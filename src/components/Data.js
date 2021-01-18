@@ -1,6 +1,9 @@
 // Basic
 import React, { Component } from "react";
 
+// Components
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
 // Data Component
 class Data extends Component {
     constructor(props) {
@@ -16,7 +19,9 @@ class Data extends Component {
             // Follow Section
             followers: null,
             // Videos Section
-            video_list: []
+            video_list: [],
+            // Chart Section
+            data: []
         };
         this.end = React.createRef();
     }
@@ -46,7 +51,13 @@ class Data extends Component {
                         this.setState({
                             video_list: result.data
                         });
-                        console.log(this.state.video_list);
+                        let dataTemp = [];
+                        for (let i = this.state.video_list.length - 1; i >= 0; i--)
+                            dataTemp.push({ name: this.state.video_list[i].title, views: this.state.video_list[i].view_count })
+                        this.setState({
+                            data: dataTemp
+                        });
+                        console.log(this.state.data);
                     })
                 })
             } else {
@@ -105,6 +116,18 @@ class Data extends Component {
                             return null;
                         }
                     })}
+                </div>
+                <h2 className="text-center pt-4">Views Data of {this.state.steamer_name}</h2>
+                <div className="d-flex justify-content-center pt-4">
+                    <ResponsiveContainer width="90%" aspect={3}>
+                        <LineChart width={400} height={400} data={this.state.data}>
+                            <Line type="monotone" dataKey="views" stroke="#9146FF" />
+                            <CartesianGrid stroke="#ccc" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip />
+                        </LineChart>
+                    </ResponsiveContainer>
                 </div>
             </div>
         );

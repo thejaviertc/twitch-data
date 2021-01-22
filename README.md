@@ -4,6 +4,9 @@
 ## **About it:**
 ### **This project is made for make people able to see info about a Twitch Streamer.**
 
+## **Live Website:**
+### **https://thejaviertc.github.io/twitch-data/**
+
 ## **Instructions:**
 ### **- Clone this repository.**
 ### **- Change the keys of the .env file with your keys (Get the keys [here](https://dev.twitch.tv/)).**
@@ -14,7 +17,8 @@
 - [x] Better Handling.
 - [x] Better Instructions.
 - [x] Display more data.
-- [ ] Create Graphs with data.
+- [x] Create Graphs with data.
+- [x] Make it live. 
 - [ ] Thinking more things...
 
 ## **Suggestions:**

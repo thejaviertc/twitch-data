@@ -1,5 +1,5 @@
 # **Twitch Data**
-![Twitch Data](https://thejaviertc.github.io/portfolio-javiertc/static/media/twitch_data.456d10d3.jpg)
+![Twitch Data](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/projects/twitch_data.jpg)
 
 ## **About it:**
 ### **This project is made for make people able to see info about a Twitch Streamer.**

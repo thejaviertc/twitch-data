@@ -74,41 +74,47 @@ class Data extends Component {
                             <span className="badge badge-danger mx-2 my-2">Followers: {this.state.followers}</span>
                         </p>
                         <h2 className="text-center pt-4">Videos of {this.state.streamerName}</h2>
-                        <div className="card-columns pt-5">
-                            {this.state.videoList.map((data, i) => {
-                                if (data.thumbnail_url) {
-                                    return (
-                                        <div key={'video_' + i} className="card" >
-                                            <img className="card-img-top" src={data.thumbnail_url.replace("%{width}", "320").replace("%{height}", "180")} alt="Test" />
-                                            <div className="card-body">
-                                                <h5 className="card-title text-center">{data.title}</h5>
-                                                <p className="text-center">
-                                                    <span className="badge badge-info mx-2 my-2">Published at: {data.published_at.slice(0, 10).split("-").reverse().join("-")}</span>
-                                                    <span className="badge badge-success mx-2 my-2">Views: {data.view_count}</span>
-                                                </p>
-                                                <div className="d-flex justify-content-center">
-                                                    <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-primary">See Video</a>
+                        {this.state.videoList.length ? (
+                            <div>
+                                <div className="card-columns pt-5">
+                                    {this.state.videoList.map((data, i) => {
+                                        if (data.thumbnail_url) {
+                                            return (
+                                                <div key={'video_' + i} className="card" >
+                                                    <img className="card-img-top" src={data.thumbnail_url.replace("%{width}", "320").replace("%{height}", "180")} alt="Test" />
+                                                    <div className="card-body">
+                                                        <h5 className="card-title text-center">{data.title}</h5>
+                                                        <p className="text-center">
+                                                            <span className="badge badge-info mx-2 my-2">Published at: {data.published_at.slice(0, 10).split("-").reverse().join("-")}</span>
+                                                            <span className="badge badge-success mx-2 my-2">Views: {data.view_count}</span>
+                                                        </p>
+                                                        <div className="d-flex justify-content-center">
+                                                            <a href={data.url} target="_blank" rel="noreferrer" className="btn btn-primary">See Video</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    )
-                                } else {
-                                    return null;
-                                }
-                            })}
-                        </div>
-                        <h2 className="text-center pt-4">Views Data of {this.state.streamerName}</h2>
-                        <div className="d-flex justify-content-center pt-4">
-                            <ResponsiveContainer width="90%" aspect={3}>
-                                <LineChart width={400} height={400} data={this.state.videoData}>
-                                    <Line type="monotone" dataKey="views" stroke="#9146FF" />
-                                    <CartesianGrid stroke="#ccc" />
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <Tooltip />
-                                </LineChart>
-                            </ResponsiveContainer>
-                        </div>
+                                            )
+                                        } else {
+                                            return null;
+                                        }
+                                    })}
+                                </div>
+                                <h2 className="text-center pt-4">Views Data of {this.state.streamerName}</h2>
+                                <div className="d-flex justify-content-center pt-4">
+                                    <ResponsiveContainer width="90%" aspect={3}>
+                                        <LineChart width={400} height={400} data={this.state.videoData}>
+                                            <Line type="monotone" dataKey="views" stroke="#9146FF" />
+                                            <CartesianGrid stroke="#ccc" />
+                                            <XAxis dataKey="name" />
+                                            <YAxis />
+                                            <Tooltip />
+                                        </LineChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </div>
+                        ) : (
+                                <h3 className="text-center pt-4">There are no videos avaible!</h3>
+                            )}
                     </div>
                 ) : (
                         <div class="d-flex justify-content-center">
@@ -116,7 +122,8 @@ class Data extends Component {
                                 <span class="sr-only">Loading...</span>
                             </div>
                         </div>
-                    )}
+                    )
+                }
             </div >
         );
     }

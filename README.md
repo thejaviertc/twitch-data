@@ -1,4 +1,7 @@
-![](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/github/twitch-data.jpg)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/github/twitch-data.jpg">
+</p>
+
 # **Twitch Data**
 
 ## **About it:**

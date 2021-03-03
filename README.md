@@ -1,8 +1,7 @@
-<p align="center">
-    <img src="https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/github/twitch-data.jpg">
-</p>
+![Main Image](https://raw.githubusercontent.com/thejaviertc/portfolio-javiertc/master/src/img/github/twitch-data.jpg)
 
 # **Twitch Data**
+[![Build](https://github.com/thejaviertc/twitch-data/actions/workflows/ghpages.yml/badge.svg?branch=master)](https://github.com/thejaviertc/twitch-data/actions/workflows/ghpages.yml)
 
 ## **About it:**
 ### **This project is made for make people able to see info about a Twitch Streamer.**
